@@ -41,22 +41,19 @@ public class MainActivity extends AppCompatActivity {
                 if (!mail.equals(inputMail)) {
                     showErrorMessage(
                             "El correo es inválido"
-                    );
+                    ); return;
                 }
 
                 if (!password.equals(inputPassword)) {
                     showErrorMessage(
                             "La contraseña en invalida"
                     );
+                        return;
 
-                    return;
-
-                } else {
-                    Intent intent = new Intent(view.getContext(),HomeActivity.class);
-                    startActivityForResult(intent,0);
                 }
 
-
+                Intent intent = new Intent(view.getContext(),HomeActivity.class);
+                startActivityForResult(intent,0);
             }
 
         });
